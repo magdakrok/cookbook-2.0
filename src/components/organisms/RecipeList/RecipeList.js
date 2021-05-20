@@ -9,6 +9,8 @@ const RecipeList = () => {
         <RecipeItem></RecipeItem>
         <RecipeItem></RecipeItem>
         <RecipeItem></RecipeItem>
+        <RecipeItem></RecipeItem>
+        <RecipeItem></RecipeItem>
 
        </StyledList>
        </>

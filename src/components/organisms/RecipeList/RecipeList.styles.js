@@ -8,7 +8,7 @@ flex-direction: row;
 flex-wrap: wrap;
 list-style: none;
 align-items: center;
-justify-content: center;
+justify-content: space-evenly;
 margin: 0 3rem 5rem 3rem;
 padding: 0;
 `
