@@ -8,8 +8,7 @@ function Root() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <MainTemplate>
-      
-      <RecipeList></RecipeList>
+        <RecipeList />
       </MainTemplate>
     </ThemeProvider>
   );
