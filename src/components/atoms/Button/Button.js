@@ -7,4 +7,8 @@ export const Button = styled.button`
   border: none;
   background-color: ${({ isDelete, theme: { colors } }) =>
     isDelete ? colors.red : colors.blue};
+
+  :focus {
+    cursor: pointer;
+  }
 `;
