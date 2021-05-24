@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import RecipeContext from 'providers/RecipeProvider';
+import RecipeList from 'components/organisms/RecipeList/RecipeList';
 
 const DashBoard = () => {
+    const {recipes} = useContext(RecipeContext);
     return (
-        <div>
-            
-        </div>
+        <RecipeList recipes={recipes}/>
     );
 };
 
