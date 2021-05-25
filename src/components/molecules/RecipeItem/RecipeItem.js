@@ -4,10 +4,6 @@ import { Button } from 'components/atoms/Button/Button';
 import FavoriteButton from 'components/atoms/FavoriteButton/FavoriteButton';
 
 const RecipeItem = () => {
-  const deleteUser = () => {
-    console.log('favorite');
-  };
-
   return (
     <Wrapper>
       <Title>Ciasto Euforia</Title>
@@ -16,7 +12,7 @@ const RecipeItem = () => {
         <Button>
           <p>Notatki</p>
         </Button>
-        <FavoriteButton isFavorite onClick={deleteUser}></FavoriteButton>
+        <FavoriteButton isFavorite></FavoriteButton>
         <Button isDelete>
           <p>Usuń</p>
         </Button>

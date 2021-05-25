@@ -1,38 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 
-export const RecipeContext = React.createContext({
-    recipes: [],
-    // deleteRecipe: () => {}
-})
+export const RecipesContext = createContext({
+  recipes: [],
+  handleAddUser: () => {},
+  deleteUser: () => {},
+});
 
-const RecipeProvider = ({children}) => {
+const RecipesProvider = ({ children }) => {
+  const [recipes, setRecipes] = useState([]);
 
-    const [recipes, setRecipes] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://cookbook-addec.firebaseio.com/cake.json`)
+      .then(({ data }) => setRecipes(data))
+      .catch((err) => console.log(err));
+  }, []);
 
-    async function fetchRecipes() {
-       try{
-           const content = await axios.get(`https://cookbook-addec.firebaseio.com/cake.json`);
-           setRecipes(content.data);
-           console.log(content.data);
-       } catch(error){
-           console.log(error);
-       }
-    }
-
-    useEffect(()=> {
-        fetchRecipes();
-    })
-    return (
-        <RecipeContext.Provider
-        value={{
-            recipes,
-            // deleteRecipe
-        }}>
-            {children}
-        </RecipeContext.Provider>
-    );
+  return (
+    <RecipesContext.Provider
+      value={{
+        recipes,
+      }}
+    >
+      {children}
+    </RecipesContext.Provider>
+  );
 };
 
-export default RecipeProvider;
-
+export default RecipesProvider;
