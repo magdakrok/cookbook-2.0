@@ -6,11 +6,11 @@ const RecipeList = ({ recipes }) => {
   return (
     <>
       <StyledList>
-        <RecipeItem></RecipeItem>
-        <RecipeItem></RecipeItem>
-        <RecipeItem></RecipeItem>
-        <RecipeItem></RecipeItem>
-        <RecipeItem></RecipeItem>
+        {Object.keys(recipes).map((key) => {
+          return [...Array(recipes[key])].map((recipe, i) => {
+            return <RecipeItem key={recipe.title} recipe={recipe} />;
+          });
+        })}
       </StyledList>
     </>
   );

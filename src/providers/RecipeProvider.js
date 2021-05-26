@@ -3,8 +3,6 @@ import axios from 'axios';
 
 export const RecipesContext = createContext({
   recipes: [],
-  handleAddUser: () => {},
-  deleteUser: () => {},
 });
 
 const RecipesProvider = ({ children }) => {
@@ -13,7 +11,7 @@ const RecipesProvider = ({ children }) => {
   useEffect(() => {
     axios
       .get(`https://cookbook-addec.firebaseio.com/cake.json`)
-      .then(({ data }) => setRecipes(data))
+      .then((response) => setRecipes(response.data))
       .catch((err) => console.log(err));
   }, []);
 
