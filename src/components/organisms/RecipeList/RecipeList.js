@@ -7,8 +7,8 @@ const RecipeList = ({ recipes }) => {
     <>
       <StyledList>
         {Object.keys(recipes).map((key) => {
-          return [...Array(recipes[key])].map((recipe, i) => {
-            return <RecipeItem key={recipe.title} recipe={recipe} />;
+          return [...Array(recipes[key])].map((recipe) => {
+            return <RecipeItem key={recipe} id={key} recipe={recipe} />;
           });
         })}
       </StyledList>

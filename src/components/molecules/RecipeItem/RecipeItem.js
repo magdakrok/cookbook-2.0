@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Title,
   Image,
@@ -9,10 +9,19 @@ import {
 import { Button } from 'components/atoms/Button/Button';
 import FavoriteButton from 'components/atoms/FavoriteButton/FavoriteButton';
 import Photo from 'assets/photos/cooking.jpg';
+import { RecipesContext } from 'providers/RecipeProvider';
+import PropTypes from 'prop-types';
+import { RecipeShape } from 'types/index';
 
-const RecipeItem = ({ recipe: { title, http, photo, favorite } }) => {
+const RecipeItem = ({
+  id,
+  recipe: { title, http, photo, favorite },
+  props,
+}) => {
+  const { updateFavoriteRecipe, deleteRecipe } = useContext(RecipesContext);
+
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Title>{title}</Title>
       <UrlWrapper>
         <a href={http}>
@@ -24,13 +33,20 @@ const RecipeItem = ({ recipe: { title, http, photo, favorite } }) => {
         <Button>
           <p>Notatki</p>
         </Button>
-        <FavoriteButton isFavorite={favorite}></FavoriteButton>
-        <Button isDelete>
+        <FavoriteButton
+          isFavorite={favorite}
+          onClick={() => updateFavoriteRecipe(id, favorite)}
+        ></FavoriteButton>
+        <Button isDelete onClick={() => deleteRecipe(id)}>
           <p>Usuń</p>
         </Button>
       </ButtonsWrapper>
     </Wrapper>
   );
+};
+
+RecipeItem.propTypes = {
+  recipe: PropTypes.shape(RecipeShape),
 };
 
 export default RecipeItem;
