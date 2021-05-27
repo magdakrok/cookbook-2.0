@@ -1,25 +1,40 @@
 import styled from 'styled-components';
+import { device } from 'assets/styles/theme';
 
 export const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   width: 310px;
-  margin: 1rem;
+  margin: 2rem 4rem;
   height: 320px;
   padding: 1rem;
+  justify-content: center;
   background-color: ${({ theme }) => theme.colors.white};
+`;
+
+export const UrlWrapper = styled.div`
+  width: 250px;
+  display: flex;
+  align-self: center;
+
+  &a {
+    text-decoration: none;
+  }
 `;
 
 export const Image = styled.img`
   width: 250px;
-  height: 180px;
-  align-self: center;
+  height: 150px;
 `;
 
 export const Title = styled.h3`
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.black};
-  padding-left: 2rem;
+  padding-left: 0;
+
+  @media ${device.tablet} {
+    padding-left: 1rem;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`
