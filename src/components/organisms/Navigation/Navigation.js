@@ -7,10 +7,10 @@ const Navigation = ({ open, setOpen, ...props }) => {
 
   return (
     <StyledNav isHidden={isHidden} onClick={() => setOpen(!open)} {...props}>
-    <StyledLink to="/przepisy/ciasta">Ciasta</StyledLink>
-    <StyledLink to="/przepisy/sałatki">Sałatki</StyledLink>
-    <StyledLink to="/przepisy/daniagłowne">Dania Główne</StyledLink>
-    <StyledLink to="/dodajprzepis">Dodaj przepis</StyledLink>
+      <StyledLink to="/recipes/cake">Ciasta</StyledLink>
+      <StyledLink to="/recipes/salad">Sałatki</StyledLink>
+      <StyledLink to="/recipes/dinner">Dania Główne</StyledLink>
+      <StyledLink to="/dodajprzepis">Dodaj przepis</StyledLink>
     </StyledNav>
   );
 };
