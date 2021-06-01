@@ -1,16 +1,16 @@
 import React from 'react';
 import { bool } from 'prop-types';
-import { StyledNav } from './Navigation.styles';
+import { StyledLink, StyledNav } from './Navigation.styles';
 
 const Navigation = ({ open, setOpen, ...props }) => {
   const isHidden = open ? true : false;
 
   return (
     <StyledNav isHidden={isHidden} onClick={() => setOpen(!open)} {...props}>
-      <a href="">Ciasta</a>
-      <a href="">Sałatki</a>
-      <a href="">Dania Główne</a>
-      <a href="">Dodaj przepis</a>
+    <StyledLink to="/przepisy/ciasta">Ciasta</StyledLink>
+    <StyledLink to="/przepisy/sałatki">Sałatki</StyledLink>
+    <StyledLink to="/przepisy/daniagłowne">Dania Główne</StyledLink>
+    <StyledLink to="/dodajprzepis">Dodaj przepis</StyledLink>
     </StyledNav>
   );
 };
