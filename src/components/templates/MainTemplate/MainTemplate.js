@@ -1,11 +1,14 @@
 import React from 'react';
 import { Wrapper } from './MainTemplate.styles';
-import Navigation from 'components/organisms/Navigation/Navigation';
+import Header from 'components/organisms/Header/Header';
 
 const MainTemplate = ({ children }) => {
-  return <Wrapper>
-    <Navigation />
-    {children}</Wrapper>;
+  return (
+    <Wrapper>
+      <Header />
+      {children}
+    </Wrapper>
+  );
 };
 
 export default MainTemplate;

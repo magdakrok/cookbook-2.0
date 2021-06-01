@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { Wrapper } from './Navigation.styles';
-import Burger from 'components/atoms/Burger/Burger';
+import React from 'react';
+import { bool } from 'prop-types';
+import { StyledNav } from './Navigation.styles';
 
-const Navigation = () => {
+const Navigation = ({ open, setOpen, ...props }) => {
+  const isHidden = open ? true : false;
 
-    const [open, setOpen] = useState(false);
+  return (
+    <StyledNav isHidden={isHidden} onClick={() => setOpen(!open)} {...props}>
+      <a href="">Ciasta</a>
+      <a href="">Sałatki</a>
+      <a href="">Dania Główne</a>
+      <a href="">Dodaj przepis</a>
+    </StyledNav>
+  );
+};
 
-
-    return (
-        <Wrapper>
-
-          <Burger open={open} setOpen={setOpen} />
-          
-        </Wrapper>
-    );
+Navigation.propTypes = {
+  open: bool.isRequired,
 };
 
 export default Navigation;

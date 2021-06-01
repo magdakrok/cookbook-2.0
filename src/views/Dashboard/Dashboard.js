@@ -7,11 +7,10 @@ const DashBoard = () => {
   const { recipes } = useContext(RecipesContext);
 
   return (
-  <Wrapper>
-    <RecipeList recipes={recipes} />;
-  </Wrapper>
-  )
-  
+    <Wrapper>
+      <RecipeList recipes={recipes} />;
+    </Wrapper>
+  );
 };
 
 export default DashBoard;
