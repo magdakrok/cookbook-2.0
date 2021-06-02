@@ -9,6 +9,7 @@ export const theme = {
     black: '#000000',
   },
   fontSize: {
+    xxl: '27px',
     xl: '24px',
     l: '17px',
     m: '12px',

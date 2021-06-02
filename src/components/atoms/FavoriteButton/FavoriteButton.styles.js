@@ -8,15 +8,9 @@ export const Button = styled.button`
   width: 50px;
   height: 50px;
   margin-bottom: 0;
-  position: relative;
-  
 
-
-  :hover{
+  :hover {
     cursor: pointer;
     transform: scale(1.2);
   }
 `;
-
-
-

@@ -5,32 +5,39 @@ export const RecipesContext = createContext({
   recipes: [],
   updateFavoriteRecipe: () => {},
   deleteRecipe: () => {},
+  setType: () => {},
 });
 
 const RecipesProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [recipeType, setRecipeType] = useState('');
 
   useEffect(() => {
-    fetchRecipe();
-  }, [isFavorite]);
+    fetchRecipe(recipeType);
+  }, [isFavorite, recipeType]);
 
-  const fetchRecipe = () => {
+  const fetchRecipe = (recipeType) => {
     axios
-      .get(`https://cookbook-addec.firebaseio.com/cake.json`)
+      .get(`https://cookbook-addec.firebaseio.com/${recipeType}.json`)
       .then((response) => setRecipes(response.data))
-
       .catch((err) => console.log(err));
   };
 
+  const setType = (recipeType) => {
+    setRecipeType(recipeType);
+  };
   const updateFavoriteRecipe = (key, favorite) => {
     (async () => {
       setIsFavorite(true);
 
       await axios
-        .patch(`https://cookbook-addec.firebaseio.com/cake/${key}.json`, {
-          favorite: !favorite,
-        })
+        .patch(
+          `https://cookbook-addec.firebaseio.com/${recipeType}/${key}.json`,
+          {
+            favorite: !favorite,
+          }
+        )
         .then((res) => {
           console.log(res);
           setIsFavorite(false);
@@ -44,9 +51,9 @@ const RecipesProvider = ({ children }) => {
 
   const deleteRecipe = (key) => {
     axios
-      .delete(`https://cookbook-addec.firebaseio.com/cake/${key}.json`)
+      .delete(`https://cookbook-addec.firebaseio.com/${recipeType}/${key}.json`)
       .then((res) => {
-        fetchRecipe();
+        // fetchRecipe();
       })
       .catch((e) => {
         alert('error');
@@ -56,6 +63,7 @@ const RecipesProvider = ({ children }) => {
     <RecipesContext.Provider
       value={{
         recipes,
+        setType,
         updateFavoriteRecipe,
         deleteRecipe,
       }}
