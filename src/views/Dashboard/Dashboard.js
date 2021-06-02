@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useCallback } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { RecipesContext } from 'providers/RecipeProvider';
 import RecipeList from 'components/organisms/RecipeList/RecipeList';
 import { Wrapper } from './Dashboard.styles';
@@ -10,11 +10,9 @@ const DashBoard = () => {
   const { setType } = useContext(RecipesContext);
 
   useEffect(() => {
-    setType(type)
-  }, [type]);
+    setType(type);
+  }, [setType, type]);
 
- 
- 
   return (
     <Wrapper>
       <RecipeList recipes={recipes} />;

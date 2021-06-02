@@ -24,9 +24,9 @@ const RecipesProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
- const setType = (recipeType) => {
-   setRecipeType(recipeType)
- }
+  const setType = (recipeType) => {
+    setRecipeType(recipeType);
+  };
   const updateFavoriteRecipe = (key, favorite) => {
     (async () => {
       setIsFavorite(true);
