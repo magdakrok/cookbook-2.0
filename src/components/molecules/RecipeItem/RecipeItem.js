@@ -36,6 +36,7 @@ const RecipeItem = ({
         <FavoriteButton
           isFavorite={favorite}
           onClick={() => updateFavoriteRecipe(id, favorite)}
+          data-testid="favorite button"
         ></FavoriteButton>
         <Button isDelete onClick={() => deleteRecipe(id)}>
           <p>Usuń</p>
