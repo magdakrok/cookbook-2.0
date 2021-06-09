@@ -5,7 +5,7 @@ export const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   width: 310px;
-  margin: 2rem 4rem;
+  margin: 2rem 2rem;
   height: 320px;
   padding: 1rem;
   justify-content: center;
@@ -13,6 +13,9 @@ export const Wrapper = styled.li`
   border: none;
   border-radius: 20px;
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  @media ${device.laptop} {
+    margin: 2rem 4rem;
+  }
 `;
 
 export const UrlWrapper = styled.div`

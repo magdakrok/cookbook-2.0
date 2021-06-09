@@ -6,8 +6,10 @@ import { useParams } from 'react-router-dom';
 
 const DashBoard = () => {
   const { recipes } = useContext(RecipesContext);
-  const { type } = useParams();
+  let { type } = useParams();
   const { setType } = useContext(RecipesContext);
+
+  if(type === undefined) type = 'cake';
 
   useEffect(() => {
     setType(type);
@@ -15,7 +17,7 @@ const DashBoard = () => {
 
   return (
     <Wrapper>
-      <RecipeList recipes={recipes} />;
+      <RecipeList recipes={recipes} />
     </Wrapper>
   );
 };
