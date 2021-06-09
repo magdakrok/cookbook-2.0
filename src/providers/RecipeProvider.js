@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import axios from 'axios';
+import axios from 'helpers/axios';
 
 export const RecipesContext = createContext({
   recipes: [],
@@ -19,25 +19,26 @@ const RecipesProvider = ({ children }) => {
 
   const fetchRecipe = (recipeType) => {
     axios
-      .get(`https://cookbook-addec.firebaseio.com/${recipeType}.json`)
-      .then((response) => setRecipes(response.data))
+      .get(`${recipeType}.json`)
+      .then((response) => {
+        setRecipes(response.data);
+        console.log(response.data);
+      })
       .catch((err) => console.log(err));
   };
 
   const setType = (recipeType) => {
     setRecipeType(recipeType);
   };
+
   const updateFavoriteRecipe = (key, favorite) => {
     (async () => {
       setIsFavorite(true);
-
+      console.log(key);
       await axios
-        .patch(
-          `https://cookbook-addec.firebaseio.com/${recipeType}/${key}.json`,
-          {
-            favorite: !favorite,
-          }
-        )
+        .patch(`${recipeType}/${key}.json`, {
+          favorite: !favorite,
+        })
         .then((res) => {
           console.log(res);
           setIsFavorite(false);
@@ -51,7 +52,7 @@ const RecipesProvider = ({ children }) => {
 
   const deleteRecipe = (key) => {
     axios
-      .delete(`https://cookbook-addec.firebaseio.com/${recipeType}/${key}.json`)
+      .delete(`${recipeType}/${key}.json`)
       .then((res) => {
         // fetchRecipe();
       })
