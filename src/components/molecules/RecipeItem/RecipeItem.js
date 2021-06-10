@@ -12,6 +12,9 @@ import Photo from 'assets/photos/cooking.jpg';
 import { RecipesContext } from 'providers/RecipeProvider';
 import PropTypes from 'prop-types';
 import { RecipeShape } from 'types/index';
+import Modal from 'components/organisms/Modal/Modal';
+import useModal from 'components/organisms/Modal/useModal';
+import RecipeNotes from 'components/molecules/RecipeNotes/RecipeNotes';
 
 const RecipeItem = ({
   id,
@@ -19,6 +22,11 @@ const RecipeItem = ({
   props,
 }) => {
   const { updateFavoriteRecipe, deleteRecipe } = useContext(RecipesContext);
+  const { isOpen, handleOpenModal, handleCloseModal } = useModal();
+
+  const handleOpenNotesDetail = async (id) => {
+    handleOpenModal();
+  };
 
   return (
     <Wrapper {...props}>
@@ -30,12 +38,16 @@ const RecipeItem = ({
       </UrlWrapper>
 
       <ButtonsWrapper>
-        <Button>
+        <Button onClick={handleOpenNotesDetail}>
           <p>Notatki</p>
         </Button>
+        <Modal isOpen={isOpen} handleClose={handleCloseModal}>
+          <RecipeNotes />
+        </Modal>
         <FavoriteButton
           isFavorite={favorite}
           onClick={() => updateFavoriteRecipe(id, favorite)}
+          data-testid="favorite button"
         ></FavoriteButton>
         <Button isDelete onClick={() => deleteRecipe(id)}>
           <p>Usuń</p>
