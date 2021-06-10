@@ -12,6 +12,8 @@ import Photo from 'assets/photos/cooking.jpg';
 import { RecipesContext } from 'providers/RecipeProvider';
 import PropTypes from 'prop-types';
 import { RecipeShape } from 'types/index';
+import Modal from 'components/organisms/Modal/Modal';
+import useModal from 'components/organisms/Modal/useModal';
 
 const RecipeItem = ({
   id,
@@ -33,6 +35,9 @@ const RecipeItem = ({
         <Button>
           <p>Notatki</p>
         </Button>
+        <RecipeNotes handleOpenNotesDetail={handleOpenNotesDetail}>
+          
+        </RecipeNotes>
         <FavoriteButton
           isFavorite={favorite}
           onClick={() => updateFavoriteRecipe(id, favorite)}
@@ -42,6 +47,9 @@ const RecipeItem = ({
           <p>Usuń</p>
         </Button>
       </ButtonsWrapper>
+      <Modal isOpen={isOpen} handleClose={handleCloseModal}>
+          <StudentDetails student={mockStudent} />
+        </Modal>
     </Wrapper>
   );
 };
