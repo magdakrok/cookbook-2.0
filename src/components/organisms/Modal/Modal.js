@@ -15,10 +15,10 @@ const Modal = ({ isOpen, handleClose, children }) => {
   );
 };
 
-Modal.PropTypes = {
-  handleClose: PropTypes.func,
-  isOpen: PropTypes.bool,
-  children: PropTypes.element,
-};
+// Modal.PropTypes = {
+//   handleClose: PropTypes.func,
+//   isOpen: PropTypes.bool,
+//   children: PropTypes.element,
+// };
 
 export default Modal;
