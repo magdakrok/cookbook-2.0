@@ -18,7 +18,7 @@ import RecipeNotes from 'components/molecules/RecipeNotes/RecipeNotes';
 
 const RecipeItem = ({
   id,
-  recipe: { title, http, photo, favorite },
+  recipe: { title, http, photo, favorite, notes },
   props,
 }) => {
   const { updateFavoriteRecipe, deleteRecipe } = useContext(RecipesContext);
@@ -42,7 +42,7 @@ const RecipeItem = ({
           <p>Notatki</p>
         </Button>
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <RecipeNotes />
+          <RecipeNotes notes={notes}/>
         </Modal>
         <FavoriteButton
           isFavorite={favorite}

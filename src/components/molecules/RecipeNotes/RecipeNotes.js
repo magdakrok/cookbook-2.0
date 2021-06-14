@@ -1,9 +1,9 @@
 import React from 'react';
 
-const RecipeNotes = () => {
+const RecipeNotes = ({notes}) => {
     return (
         <div>
-            Notatki
+            {notes.content}
         </div>
     );
 };

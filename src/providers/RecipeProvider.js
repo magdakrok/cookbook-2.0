@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 import axios from 'helpers/axios';
 
 export const RecipesContext = createContext({
@@ -6,6 +6,7 @@ export const RecipesContext = createContext({
   updateFavoriteRecipe: () => {},
   deleteRecipe: () => {},
   setType: () => {},
+  fetchRecipe: () => {},
 });
 
 const RecipesProvider = ({ children }) => {
@@ -13,16 +14,11 @@ const RecipesProvider = ({ children }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [recipeType, setRecipeType] = useState('');
 
-  useEffect(() => {
-    fetchRecipe(recipeType);
-  }, [isFavorite, recipeType]);
-
   const fetchRecipe = (recipeType) => {
     axios
       .get(`${recipeType}.json`)
       .then((response) => {
         setRecipes(response.data);
-        console.log(response.data);
       })
       .catch((err) => console.log(err));
   };
@@ -42,6 +38,7 @@ const RecipesProvider = ({ children }) => {
         .then((res) => {
           console.log(res);
           setIsFavorite(false);
+          fetchRecipe(recipeType);
         })
         .catch((e) => {
           alert('error');
@@ -54,7 +51,7 @@ const RecipesProvider = ({ children }) => {
     axios
       .delete(`${recipeType}/${key}.json`)
       .then((res) => {
-        // fetchRecipe();
+        fetchRecipe(recipeType);
       })
       .catch((e) => {
         alert('error');
@@ -67,6 +64,7 @@ const RecipesProvider = ({ children }) => {
         setType,
         updateFavoriteRecipe,
         deleteRecipe,
+        fetchRecipe,
       }}
     >
       {children}
