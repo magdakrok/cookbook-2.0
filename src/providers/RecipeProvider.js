@@ -1,11 +1,12 @@
-import React, { useState, useEffect, createContext } from 'react';
-import axios from 'axios';
+import React, { useState, createContext } from 'react';
+import axios from 'helpers/axios';
 
 export const RecipesContext = createContext({
   recipes: [],
   updateFavoriteRecipe: () => {},
   deleteRecipe: () => {},
   setType: () => {},
+  fetchRecipe: () => {},
 });
 
 const RecipesProvider = ({ children }) => {
@@ -13,34 +14,31 @@ const RecipesProvider = ({ children }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [recipeType, setRecipeType] = useState('');
 
-  useEffect(() => {
-    fetchRecipe(recipeType);
-  }, [isFavorite, recipeType]);
-
   const fetchRecipe = (recipeType) => {
     axios
-      .get(`https://cookbook-addec.firebaseio.com/${recipeType}.json`)
-      .then((response) => setRecipes(response.data))
+      .get(`${recipeType}.json`)
+      .then((response) => {
+        setRecipes(response.data);
+      })
       .catch((err) => console.log(err));
   };
 
   const setType = (recipeType) => {
     setRecipeType(recipeType);
   };
+
   const updateFavoriteRecipe = (key, favorite) => {
     (async () => {
       setIsFavorite(true);
-
+      console.log(key);
       await axios
-        .patch(
-          `https://cookbook-addec.firebaseio.com/${recipeType}/${key}.json`,
-          {
-            favorite: !favorite,
-          }
-        )
+        .patch(`${recipeType}/${key}.json`, {
+          favorite: !favorite,
+        })
         .then((res) => {
           console.log(res);
           setIsFavorite(false);
+          fetchRecipe(recipeType);
         })
         .catch((e) => {
           alert('error');
@@ -51,9 +49,9 @@ const RecipesProvider = ({ children }) => {
 
   const deleteRecipe = (key) => {
     axios
-      .delete(`https://cookbook-addec.firebaseio.com/${recipeType}/${key}.json`)
+      .delete(`${recipeType}/${key}.json`)
       .then((res) => {
-        // fetchRecipe();
+        fetchRecipe(recipeType);
       })
       .catch((e) => {
         alert('error');
@@ -66,6 +64,7 @@ const RecipesProvider = ({ children }) => {
         setType,
         updateFavoriteRecipe,
         deleteRecipe,
+        fetchRecipe,
       }}
     >
       {children}
