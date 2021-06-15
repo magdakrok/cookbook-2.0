@@ -1,0 +1,165 @@
+[33mcommit aea8321b6f11d9f200c6b20127ca6542c97ec70e[m[33m ([m[1;36mHEAD -> [m[1;32mnotes[m[33m, [m[1;31morigin/tests[m[33m, [m[1;32mtests[m[33m)[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Mon Jun 14 15:08:23 2021 +0200
+
+    refactor RecipeProvider and Dashboard
+
+[33mcommit 5b754b0ccb4c19050ca4d1b9b09f0e8e4e89ce24[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu Jun 10 19:04:20 2021 +0200
+
+    add modal to RecipeItem
+
+[33mcommit 7bcad21936e8849652a0da9e7e4da060a030b0bb[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu Jun 10 18:54:29 2021 +0200
+
+    add Modal
+
+[33mcommit 642f9dabb872ec42e8986b2a3c7a898e79d61322[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu Jun 10 16:37:09 2021 +0200
+
+    add useModal
+
+[33mcommit 976bc6376f95d22d2b3594777b8b3415c86e5638[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Wed Jun 9 12:33:12 2021 +0200
+
+    add axios instance and add RecipeProvider tests
+
+[33mcommit deb3d2b5c33a5326bfba47231bc8965c3030cbfe[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Fri Jun 4 16:38:51 2021 +0200
+
+    add RecipeItem tests
+
+[33mcommit 1ebe94133913808077dd9ccbdeb6d26b042daacc[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Wed Jun 2 13:07:46 2021 +0200
+
+    add renderWithProviders test
+
+[33mcommit c726ac64185fd7a1a64a78d36064e80032f296a1[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Wed Jun 2 12:21:32 2021 +0200
+
+    fix the missing dependencies in useEffect
+
+[33mcommit e41c656df65a0b3565462c6c50d31d5cc158629f[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Tue Jun 1 22:24:00 2021 +0200
+
+    useParams
+
+[33mcommit edfb95042c111478ec12f9839c4f0518c3e12f91[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Tue Jun 1 14:08:00 2021 +0200
+
+    add styles to navLinks
+
+[33mcommit a699336c5859cf7b6b9a03fa693a528ea2f4c53f[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Tue Jun 1 12:11:01 2021 +0200
+
+    add sideDrawer
+
+[33mcommit 9e147d6ff0c2b40297846abb010dea71074ade40[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Fri May 28 20:16:03 2021 +0200
+
+    add burger toggle
+
+[33mcommit 22fb784f88104c4c40bf37d3d3ad6368a5da6f69[m[33m ([m[1;31morigin/recipe[m[33m, [m[1;32mrecipe[m[33m)[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Fri May 28 13:43:11 2021 +0200
+
+    update styles
+
+[33mcommit 95d8c0021891cff6a7c6fb042cb083cd472085cc[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu May 27 17:35:16 2021 +0200
+
+    add PropTypes, favorite and delete functions
+
+[33mcommit a057551e81e9eb68f711b9eb51de1a77d507cade[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu May 27 13:15:07 2021 +0200
+
+    update Recipe styles
+
+[33mcommit 8e3a60b0f81ae94b4588a0cbc0179fd7b09d97b7[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Wed May 26 14:41:59 2021 +0200
+
+    add RecipeItem
+
+[33mcommit 648495403e6c26599d7c1d860cce93817cc71f5a[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Tue May 25 17:13:48 2021 +0200
+
+    fix the context
+
+[33mcommit 6b188c2237fc03557401dd2276cc46b94178859c[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Mon May 24 18:09:47 2021 +0200
+
+    add context
+
+[33mcommit 5b60f8d077ea14679d4ba96e498831e840909a80[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Fri May 21 11:13:02 2021 +0200
+
+    add prettier rules and fix warnings
+
+[33mcommit c0235a3d1876ac9779dbbb34115488d3bfd4f874[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Fri May 21 10:24:23 2021 +0200
+
+    add buttons
+
+[33mcommit 9bd7883300ac172bcda9cda4c25d1a7b38f14511[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu May 20 10:43:01 2021 +0200
+
+    change styles
+
+[33mcommit 3b64db298c1c8c118be1af0e6f1407e0b075c7ed[m
+Merge: 9f4c988 519acf3
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu May 20 10:26:24 2021 +0200
+
+    Merge branch 'main' of https://github.com/magdakrok/cookbook-2.0 into recipe
+
+[33mcommit 519acf32305dd5e11332cb8a1f2ee518f2401a7f[m
+Merge: 1933394 4347526
+Author: Magdalena Krok <49493901+magdakrok@users.noreply.github.com>
+Date:   Thu May 20 10:25:10 2021 +0200
+
+    Merge pull request #1 from magdakrok/globalStyles
+    
+    Global styles
+
+[33mcommit 434752681c0448eaa7cc3bdaabf55b22d3ac7b74[m[33m ([m[1;31morigin/globalStyles[m[33m, [m[1;32mglobalStyles[m[33m)[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu May 20 10:20:17 2021 +0200
+
+    add device
+
+[33mcommit 9f4c988656aeaa8e326e1f69934aa744780d8c8b[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Thu May 20 10:19:27 2021 +0200
+
+    add recipeList and recipeItem
+
+[33mcommit 82956e03c713e190fc91ddc5bdc5148b9b5068a4[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Wed May 19 12:46:42 2021 +0200
+
+    add globalStyles
+
+[33mcommit 1933394f4cab174b19ced6a30cfedf65fe02e423[m
+Author: magda.krok <magdalena.krok@interia.pl>
+Date:   Tue May 18 13:01:05 2021 +0200
+
+    setup

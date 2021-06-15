@@ -3,7 +3,7 @@ import React from 'react';
 const RecipeNotes = ({notes}) => {
     return (
         <div>
-            {notes.content}
+            {notes.notesItem.content}
         </div>
     );
 };

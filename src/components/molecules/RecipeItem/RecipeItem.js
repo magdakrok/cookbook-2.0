@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 import { RecipeShape } from 'types/index';
 import Modal from 'components/organisms/Modal/Modal';
 import useModal from 'components/organisms/Modal/useModal';
-import RecipeNotes from 'components/molecules/RecipeNotes/RecipeNotes';
+import RecipeNotes from 'components/organisms/RecipeNotes/RecipeNotes';
 
 const RecipeItem = ({
   id,
