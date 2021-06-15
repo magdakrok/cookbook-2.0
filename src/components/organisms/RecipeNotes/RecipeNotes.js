@@ -1,10 +1,17 @@
 import React from 'react';
+import {Wrapper, RecipeNotesWrapper} from './RecipeNotes.styles';
+import AddRecipeNotes from 'components/organisms/AddRecipeNotes/AddRecipeNotes';
 
 const RecipeNotes = ({notes}) => {
     return (
-        <div>
+        <Wrapper>
+            <RecipeNotesWrapper>
             {notes.notesItem.content}
-        </div>
+            </RecipeNotesWrapper>
+            <AddRecipeNotes>
+
+            </AddRecipeNotes>
+        </Wrapper>
     );
 };
 
