@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Input = styled.input`
-padding: 5px 8px;
-border: 1px solid ${({theme}) => theme.colors.black};
-box-sizing: border-box;
-box-shadow: -2px 4px 10px rgba(115,124,142, 0.3);
-border-radius: 25px;
+  padding: 5px 8px;
+  margin-left: 1rem;
+  border: 0;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.lightSalmon};
+  box-sizing: border-box;
 
-&:focus{
+  outline: 0;
+  &:focus {
     outline: none;
-    box-shadow: -2px 4px 10px rgba(115,124,142, 0.3);
-}
-`
+  }
+`;

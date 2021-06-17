@@ -1,5 +1,3 @@
-import react from 'react';
-import PropTypes from 'prop-types';
 import { ModalWrapper } from './Modal.styles';
 
 const Modal = ({ isOpen, handleClose, children }) => {
@@ -14,11 +12,5 @@ const Modal = ({ isOpen, handleClose, children }) => {
     </ModalWrapper>
   );
 };
-
-// Modal.PropTypes = {
-//   handleClose: PropTypes.func,
-//   isOpen: PropTypes.bool,
-//   children: PropTypes.element,
-// };
 
 export default Modal;

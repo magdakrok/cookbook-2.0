@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import {
-  Title,
   Image,
   Wrapper,
   ButtonsWrapper,
   UrlWrapper,
 } from './RecipeItem.styles';
+import { Title } from 'components/atoms/Title/Title';
 import { Button } from 'components/atoms/Button/Button';
 import FavoriteButton from 'components/atoms/FavoriteButton/FavoriteButton';
 import Photo from 'assets/photos/cooking.jpg';
@@ -42,7 +42,7 @@ const RecipeItem = ({
           <p>Notatki</p>
         </Button>
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <RecipeNotes notes={notes}/>
+          <RecipeNotes notes={notes} />
         </Modal>
         <FavoriteButton
           isFavorite={favorite}
