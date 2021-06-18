@@ -59,6 +59,7 @@ const RecipeItem = ({
 
 RecipeItem.propTypes = {
   recipe: PropTypes.shape(RecipeShape),
+  id: PropTypes.string
 };
 
 export default RecipeItem;

@@ -4,6 +4,7 @@ import FormField from 'components/molecules/FormField/FormField';
 import { Title } from 'components/atoms/Title/Title';
 import { NotesButton } from 'components/atoms/NotesButton/NotesButton';
 import { RecipesContext } from 'providers/RecipeProvider';
+import PropTypes from 'prop-types';
 
 const AddRecipeNotes = ({ id }) => {
   const key = id;
@@ -37,6 +38,10 @@ const AddRecipeNotes = ({ id }) => {
       </NotesButton>
     </Wrapper>
   );
+};
+
+AddRecipeNotes.propTypes = {
+  id: PropTypes.string
 };
 
 export default AddRecipeNotes;
