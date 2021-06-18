@@ -42,7 +42,7 @@ const RecipeItem = ({
           <p>Notatki</p>
         </Button>
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <RecipeNotes notes={notes} />
+          <RecipeNotes id={id} notes={notes} />
         </Modal>
         <FavoriteButton
           isFavorite={favorite}
