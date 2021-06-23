@@ -5,16 +5,23 @@ import PropTypes from 'prop-types';
 
 
 const RecipeNotes = ({ notes, id }) => {
+   console.log(notes)
   return (
     <Wrapper>
-      <RecipeNotesWrapper></RecipeNotesWrapper>
+      <RecipeNotesWrapper>
+       {notes ?  Object.keys(notes).map((key) => {
+          return [...Array(notes[key])].map((notes) => {
+            return <p key={notes}>{notes.notes}</p> 
+        })}) : <p>Brak notatek</p>}
+      
+      </RecipeNotesWrapper>
       <AddRecipeNotes id={id}></AddRecipeNotes>
     </Wrapper>
   );
 };
 
 RecipeNotes.propTypes = {
-  notes: PropTypes.object.isRequired,
+  notes: PropTypes.object,
   id: PropTypes.string.isRequired
 };
 
