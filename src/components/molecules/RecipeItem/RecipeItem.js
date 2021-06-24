@@ -9,7 +9,7 @@ import { Title } from 'components/atoms/Title/Title';
 import { Button } from 'components/atoms/Button/Button';
 import FavoriteButton from 'components/atoms/FavoriteButton/FavoriteButton';
 import Photo from 'assets/photos/cooking.jpg';
-import { RecipesContext } from 'providers/RecipeProvider';
+import { RecipesContext } from 'providers/RecipeProvider/RecipeProvider';
 import PropTypes from 'prop-types';
 import { RecipeShape } from 'types/index';
 import Modal from 'components/organisms/Modal/Modal';
@@ -42,8 +42,7 @@ const RecipeItem = ({
           <p>Notatki</p>
         </Button>
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <RecipeNotes id={id} notes={notes}  />
-         
+          <RecipeNotes id={id} notes={notes} />
         </Modal>
         <FavoriteButton
           isFavorite={favorite}
@@ -60,7 +59,7 @@ const RecipeItem = ({
 
 RecipeItem.propTypes = {
   recipe: PropTypes.shape(RecipeShape),
-  id: PropTypes.string
+  id: PropTypes.string,
 };
 
 export default RecipeItem;

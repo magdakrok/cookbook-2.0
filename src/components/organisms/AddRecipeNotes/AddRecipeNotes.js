@@ -3,7 +3,7 @@ import { Wrapper } from './AddRecipeNotes.styles';
 import FormField from 'components/molecules/FormField/FormField';
 import { Title } from 'components/atoms/Title/Title';
 import { NotesButton } from 'components/atoms/NotesButton/NotesButton';
-import { RecipesContext } from 'providers/RecipeProvider';
+import { RecipesContext } from 'providers/RecipeProvider/RecipeProvider';
 import PropTypes from 'prop-types';
 
 const AddRecipeNotes = ({ id }) => {
@@ -41,7 +41,7 @@ const AddRecipeNotes = ({ id }) => {
 };
 
 AddRecipeNotes.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
 };
 
 export default AddRecipeNotes;
