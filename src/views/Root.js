@@ -1,36 +1,19 @@
-import { GlobalStyle } from 'assets/styles/globalStyles';
-import { ThemeProvider } from 'styled-components';
-import { theme } from 'assets/styles/theme';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import DashBoard from './Dashboard/Dashboard';
-import RecipesProvider from 'providers/RecipeProvider';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 function Root() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-
-      <Router>
-        <MainTemplate>
-          <RecipesProvider>
-            <Switch>
-              <Route exact path="/">
-                <Redirect to="/recipes/cake" />
-              </Route>
-              <Route path="/recipes/:type?">
-                <DashBoard />
-              </Route>
-            </Switch>
-          </RecipesProvider>
-        </MainTemplate>
-      </Router>
-    </ThemeProvider>
+    <MainTemplate>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/recipes/cake" />
+        </Route>
+        <Route path="/recipes/:type?">
+          <DashBoard />
+        </Route>
+      </Switch>
+    </MainTemplate>
   );
 }
 

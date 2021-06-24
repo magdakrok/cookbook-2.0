@@ -1,20 +1,21 @@
 import React, { useContext } from 'react';
 import {
-  Title,
   Image,
   Wrapper,
   ButtonsWrapper,
   UrlWrapper,
 } from './RecipeItem.styles';
+import { Title } from 'components/atoms/Title/Title';
 import { Button } from 'components/atoms/Button/Button';
 import FavoriteButton from 'components/atoms/FavoriteButton/FavoriteButton';
 import Photo from 'assets/photos/cooking.jpg';
-import { RecipesContext } from 'providers/RecipeProvider';
+import { RecipesContext } from 'providers/RecipeProvider/RecipeProvider';
+import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesProvider';
 import PropTypes from 'prop-types';
 import { RecipeShape } from 'types/index';
 import Modal from 'components/organisms/Modal/Modal';
 import useModal from 'components/organisms/Modal/useModal';
-import RecipeNotes from 'components/molecules/RecipeNotes/RecipeNotes';
+import RecipeNotes from 'components/organisms/RecipeNotes/RecipeNotes';
 
 const RecipeItem = ({
   id,
@@ -22,10 +23,13 @@ const RecipeItem = ({
   props,
 }) => {
   const { updateFavoriteRecipe, deleteRecipe } = useContext(RecipesContext);
+  const { setRecipeNotes, setRecipeId } = useContext(RecipeNotesContext);
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
-  const handleOpenNotesDetail = async (id) => {
+  const handleOpenNotesDetail = async () => {
     handleOpenModal();
+    setRecipeNotes(notes);
+    setRecipeId(id);
   };
 
   return (
@@ -42,7 +46,7 @@ const RecipeItem = ({
           <p>Notatki</p>
         </Button>
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <RecipeNotes notes={notes}/>
+          <RecipeNotes />
         </Modal>
         <FavoriteButton
           isFavorite={favorite}
@@ -59,6 +63,7 @@ const RecipeItem = ({
 
 RecipeItem.propTypes = {
   recipe: PropTypes.shape(RecipeShape),
+  id: PropTypes.string,
 };
 
 export default RecipeItem;

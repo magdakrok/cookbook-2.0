@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { RecipesContext } from 'providers/RecipeProvider';
+import { RecipesContext } from 'providers/RecipeProvider/RecipeProvider';
 import RecipeList from 'components/organisms/RecipeList/RecipeList';
 import { Wrapper } from './Dashboard.styles';
 import { useParams } from 'react-router-dom';
