@@ -61,7 +61,6 @@ const RecipesProvider = ({ children }) => {
 
   const handleAddRecipeNotes = (values, key) => {
     const notes = values;
-    console.log(notes);
     axios
       .post(`${recipeType}/${key}/notes.json`, {
         notes,

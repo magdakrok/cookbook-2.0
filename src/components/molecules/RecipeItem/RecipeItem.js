@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {
   Image,
   Wrapper,
@@ -23,12 +23,13 @@ const RecipeItem = ({
   props,
 }) => {
   const { updateFavoriteRecipe, deleteRecipe } = useContext(RecipesContext);
-  const {setRecipeNotes} = useContext(RecipeNotesContext); 
+  const { setRecipeNotes, setRecipeId } = useContext(RecipeNotesContext);
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
-  const handleOpenNotesDetail = async (id) => {
+  const handleOpenNotesDetail = async () => {
     handleOpenModal();
     setRecipeNotes(notes);
+    setRecipeId(id);
   };
 
   return (

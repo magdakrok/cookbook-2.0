@@ -2,26 +2,30 @@ import React, { useState, createContext } from 'react';
 
 export const RecipeNotesContext = createContext({
   notes: [],
-  key: '',
-  setRecipeNotes: () => {}
+  id: '',
+  setRecipeNotes: () => {},
+  setRecipeId: () => {},
 });
 
 const RecipeNotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
-  const [key, setKey] = useState('');
+  const [id, setId] = useState('');
 
-  const setRecipeNotes = (notes) =>{
-     setNotes(notes)
-     
-  }
+  const setRecipeNotes = (notes) => {
+    setNotes(notes);
+  };
 
+  const setRecipeId = (id) => {
+    setId(id);
+  };
 
   return (
     <RecipeNotesContext.Provider
       value={{
         notes,
-        key,
-        setRecipeNotes
+        id,
+        setRecipeNotes,
+        setRecipeId,
       }}
     >
       {children}
