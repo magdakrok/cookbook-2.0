@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Wrapper, RecipeNotesWrapper } from './RecipeNotes.styles';
 import AddRecipeNotes from 'components/organisms/AddRecipeNotes/AddRecipeNotes';
 import PropTypes from 'prop-types';
 import RecipeNotesItem from 'components/molecules/RecipeNotesItem/RecipeNotesItem';
+import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesProvider';
 
-const RecipeNotes = ({ notes, id }) => {
-  console.log(notes);
+const RecipeNotes = ({ id }) => {
+  const { notes } = useContext(RecipeNotesContext);
+
   return (
     <Wrapper>
       <RecipeNotesWrapper>
@@ -31,7 +33,7 @@ const RecipeNotes = ({ notes, id }) => {
 
 RecipeNotes.propTypes = {
   notes: PropTypes.object,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
 
 export default RecipeNotes;
