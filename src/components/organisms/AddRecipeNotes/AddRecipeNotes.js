@@ -10,7 +10,7 @@ import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesPro
 const AddRecipeNotes = () => {
   const [notesValues, setNotesValues] = useState('');
   const { handleAddRecipeNotes } = useContext(RecipesContext);
-  const { id } = useContext(RecipeNotesContext);
+  const { id, fetchRecipeNotes } = useContext(RecipeNotesContext);
   console.log(`id ${id}`);
 
   const handleInputChange = (e) => {
@@ -21,6 +21,7 @@ const AddRecipeNotes = () => {
     e.preventDefault();
     handleAddRecipeNotes(notesValues, id);
     console.log(notesValues);
+    fetchRecipeNotes();
     setNotesValues('');
   };
   return (
