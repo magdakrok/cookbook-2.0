@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Wrapper } from './AddRecipeNotes.styles';
+import { Wrapper } from 'components/atoms/Wrapper/Wrapper';
 import FormField from 'components/molecules/FormField/FormField';
 import { Title } from 'components/atoms/Title/Title';
 import { NotesButton } from 'components/atoms/NotesButton/NotesButton';
@@ -34,7 +34,7 @@ const AddRecipeNotes = () => {
         value={notesValues}
         onChange={handleInputChange}
       ></FormField>
-      <NotesButton type="sumbit">
+      <NotesButton type="sumbit" style={{display: 'flex', justifySelf: 'center'}}>
         <p>Dodaj</p>
       </NotesButton>
     </Wrapper>
