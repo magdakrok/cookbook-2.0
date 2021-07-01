@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Wrapper, RecipeNotesWrapper } from './RecipeNotes.styles';
-import { Wrapper as ListWrapper } from 'components/atoms/Wrapper/Wrapper';
+import { Wrapper, ListWrapper} from './RecipeNotes.styles';
+
 import AddRecipeNotes from 'components/organisms/AddRecipeNotes/AddRecipeNotes';
 import PropTypes from 'prop-types';
 import RecipeNotesItem from 'components/molecules/RecipeNotesItem/RecipeNotesItem';

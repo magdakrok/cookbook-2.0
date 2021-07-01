@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {device} from 'assets/styles/theme';
+import { Wrapper as RecipeListWrapper  } from 'components/atoms/Wrapper/Wrapper';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -15,10 +16,8 @@ export const Wrapper = styled.div`
   
 `;
 
-export const RecipeNotesWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  height: 100%;
+export const ListWrapper = styled(RecipeListWrapper)`
+display: flex;
+  align-items: flex-start;
+  overflow-y: scroll;
 `;
