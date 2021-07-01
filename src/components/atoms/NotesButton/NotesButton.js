@@ -11,8 +11,10 @@ export const NotesButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-self: flex-end;
-  margin-left: 1rem;
+  justify-self: center;
+  align-self: center;
+  right: 1rem;
+  
   :hover {
     cursor: pointer;
   }

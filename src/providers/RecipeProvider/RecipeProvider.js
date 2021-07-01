@@ -3,6 +3,7 @@ import axios from 'helpers/axios';
 
 export const RecipesContext = createContext({
   recipes: [],
+  recipeType: '',
   updateFavoriteRecipe: () => {},
   deleteRecipe: () => {},
   setType: () => {},
@@ -76,6 +77,7 @@ const RecipesProvider = ({ children }) => {
     <RecipesContext.Provider
       value={{
         recipes,
+        recipeType,
         setType,
         updateFavoriteRecipe,
         deleteRecipe,

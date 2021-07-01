@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Wrapper, RecipeNotesWrapper } from './RecipeNotes.styles';
+import { Wrapper as ListWrapper } from 'components/atoms/Wrapper/Wrapper';
 import AddRecipeNotes from 'components/organisms/AddRecipeNotes/AddRecipeNotes';
 import PropTypes from 'prop-types';
 import RecipeNotesItem from 'components/molecules/RecipeNotesItem/RecipeNotesItem';
@@ -10,7 +11,7 @@ const RecipeNotes = ({ id }) => {
 
   return (
     <Wrapper>
-      <RecipeNotesWrapper>
+      <ListWrapper>
         {notes ? (
           Object.keys(notes).map((key) => {
             return [...Array(notes[key])].map((notes) => {
@@ -25,7 +26,7 @@ const RecipeNotes = ({ id }) => {
         ) : (
           <p>Brak notatek</p>
         )}
-      </RecipeNotesWrapper>
+      </ListWrapper>
       <AddRecipeNotes id={id}></AddRecipeNotes>
     </Wrapper>
   );
