@@ -3,6 +3,7 @@ import { Wrapper } from 'components/atoms/Wrapper/Wrapper';
 import FormField from 'components/molecules/FormField/FormField';
 import { Title } from 'components/atoms/Title/Title';
 import { NotesButton } from 'components/atoms/NotesButton/NotesButton';
+import { ButtonWrapper } from 'components/organisms/AddRecipeNotes/AddRecipeNotes.styles';
 import { RecipesContext } from 'providers/RecipeProvider/RecipeProvider';
 import PropTypes from 'prop-types';
 import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesProvider';
@@ -34,9 +35,11 @@ const AddRecipeNotes = () => {
         value={notesValues}
         onChange={handleInputChange}
       ></FormField>
-      <NotesButton type="sumbit" style={{display: 'flex', justifySelf: 'center'}}>
+      <ButtonWrapper>
+      <NotesButton type="sumbit" >
         <p>Dodaj</p>
       </NotesButton>
+      </ButtonWrapper>
     </Wrapper>
   );
 };

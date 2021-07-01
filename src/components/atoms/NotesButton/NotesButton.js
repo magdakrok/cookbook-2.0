@@ -13,6 +13,7 @@ export const NotesButton = styled.button`
   align-items: center;
   justify-self: center;
   align-self: center;
+  right: 1rem;
   
   :hover {
     cursor: pointer;
