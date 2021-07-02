@@ -1,4 +1,5 @@
 import { ModalWrapper } from './Modal.styles';
+import CloseButton from 'components/atoms/CloseButton/CloseButton';
 
 const Modal = ({ isOpen, handleClose, children }) => {
   return (
@@ -8,7 +9,7 @@ const Modal = ({ isOpen, handleClose, children }) => {
       onRequestClose={handleClose}
     >
       {children}
-      <button onClick={handleClose}>Close</button>
+      <CloseButton onClick={handleClose}>Close</CloseButton>
     </ModalWrapper>
   );
 };

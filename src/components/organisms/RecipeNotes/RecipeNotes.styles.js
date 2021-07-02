@@ -5,7 +5,7 @@ import { Wrapper as RecipeListWrapper  } from 'components/atoms/Wrapper/Wrapper'
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 90%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -19,5 +19,5 @@ export const Wrapper = styled.div`
 export const ListWrapper = styled(RecipeListWrapper)`
 display: flex;
   align-items: flex-start;
-  overflow-y: scroll;
+  
 `;
