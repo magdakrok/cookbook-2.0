@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Wrapper, RemoveIcon} from './RecipeNotesItem.styles';
+
 
 const RecipeNotesItem = ({ notes }) => {
-  console.log(notes);
+ 
 
   return (
-    <div>
+    <Wrapper>
       <p>{notes}</p>
-    </div>
+      <RemoveIcon />
+    </Wrapper>
   );
 };
 
-RecipeNotesItem.propTypes = {};
+RecipeNotesItem.propTypes = {
+  notes: PropTypes.object
+};
 
 export default RecipeNotesItem;
