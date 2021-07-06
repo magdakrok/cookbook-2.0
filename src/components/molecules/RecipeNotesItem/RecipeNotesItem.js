@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Wrapper, RemoveIcon} from './RecipeNotesItem.styles';
-
+import {Wrapper } from './RecipeNotesItem.styles';
+import RemoveNoteButton from 'components/atoms/RemoveNoteButton/RemoveNoteButton';
 
 const RecipeNotesItem = ({ notes }) => {
  
@@ -9,7 +9,8 @@ const RecipeNotesItem = ({ notes }) => {
   return (
     <Wrapper>
       <p>{notes}</p>
-      <RemoveIcon />
+     <RemoveNoteButton />
+      
     </Wrapper>
   );
 };

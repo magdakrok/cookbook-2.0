@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { ReactComponent as Remove } from 'assets/icons/remove.svg'  
 
 export const Wrapper = styled.li`
 display: flex;
-flex-direction: row;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
-margin-left: 1rem;
+
+
+
 
 
 p{
@@ -17,7 +17,3 @@ p{
 }
 `;
 
-export const RemoveIcon = styled(Remove)`
- width: 25px;
- height: 25px;
-`;
