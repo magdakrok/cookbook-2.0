@@ -7,13 +7,15 @@ export const RecipeNotesContext = createContext({
   id: '',
   setRecipeNotes: () => {},
   setRecipeId: () => {},
-  fetchRecipeNotes: () => {}
+  fetchRecipeNotes: () => {},
+  removeRecipeNote: () => {}
 });
 
 const RecipeNotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
   const [id, setId] = useState('');
   const {recipeType} = useContext(RecipesContext);
+  
 
   const setRecipeNotes = (notes) => {
     setNotes(notes);
@@ -34,6 +36,17 @@ const RecipeNotesProvider = ({ children }) => {
   
   }
 
+  const removeRecipeNote = (key) => {
+    console.log(key)
+    console.log(id);
+   axios.delete(`${recipeType}/${id}/notes/${key}.json`)
+   .then((response) => {
+     fetchRecipeNotes();
+     console.log(`deleted ${response}`)
+   })
+   .catch((err ) => console.log(err))
+  }
+
   return (
     <RecipeNotesContext.Provider
       value={{
@@ -42,6 +55,7 @@ const RecipeNotesProvider = ({ children }) => {
         setRecipeNotes,
         setRecipeId,
         fetchRecipeNotes,
+        removeRecipeNote
       }}
     >
       {children}

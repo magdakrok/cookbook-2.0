@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import RecipeNotesItem from 'components/molecules/RecipeNotesItem/RecipeNotesItem';
 import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesProvider';
 
-const RecipeNotes = ({ id }) => {
-  const { notes } = useContext(RecipeNotesContext);
+const RecipeNotes = () => {
+  const { notes, id } = useContext(RecipeNotesContext);
 
   return (
     <Wrapper>
@@ -17,7 +17,8 @@ const RecipeNotes = ({ id }) => {
             return [...Array(notes[key])].map((notes) => {
               return (
                 <RecipeNotesItem
-                  key={notes}
+                  key={id}
+                  id={key}
                   notes={notes.notes}
                 ></RecipeNotesItem>
               );
