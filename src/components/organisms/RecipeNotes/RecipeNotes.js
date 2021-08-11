@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Wrapper, ListWrapper} from './RecipeNotes.styles';
 
 import AddRecipeNotes from 'components/organisms/AddRecipeNotes/AddRecipeNotes';
@@ -9,6 +9,9 @@ import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesPro
 const RecipeNotes = () => {
   const { notes, id } = useContext(RecipeNotesContext);
 
+  useEffect(() => {
+
+  },[notes])
   return (
     <Wrapper>
       <ListWrapper>

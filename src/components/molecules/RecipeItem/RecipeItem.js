@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   Image,
   Wrapper,
@@ -23,14 +23,21 @@ const RecipeItem = ({
   props,
 }) => {
   const { updateFavoriteRecipe, deleteRecipe } = useContext(RecipesContext);
-  const { setRecipeNotes, setRecipeId } = useContext(RecipeNotesContext);
+  const {fetchRecipeNotes, setRecipeNotes, setRecipeId } = useContext(RecipeNotesContext);
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
   const handleOpenNotesDetail = async () => {
     handleOpenModal();
     setRecipeNotes(notes);
+   
     setRecipeId(id);
   };
+
+  const handleCloseNotesDetail = () => {
+   
+    handleCloseModal();
+    
+  }
 
   return (
     <Wrapper {...props}>
@@ -45,7 +52,7 @@ const RecipeItem = ({
         <Button onClick={handleOpenNotesDetail}>
           <p>Notatki</p>
         </Button>
-        <Modal isOpen={isOpen} handleClose={handleCloseModal}>
+        <Modal isOpen={isOpen} handleClose={handleCloseNotesDetail}>
           <RecipeNotes />
         </Modal>
         <FavoriteButton

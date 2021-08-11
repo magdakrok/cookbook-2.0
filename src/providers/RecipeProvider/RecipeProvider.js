@@ -8,7 +8,6 @@ export const RecipesContext = createContext({
   deleteRecipe: () => {},
   setType: () => {},
   fetchRecipe: () => {},
-  handleAddRecipeNotes: () => {},
 });
 
 const RecipesProvider = ({ children }) => {
@@ -60,19 +59,7 @@ const RecipesProvider = ({ children }) => {
       });
   };
 
-  const handleAddRecipeNotes = (values, key) => {
-    const notes = values;
-    axios
-      .post(`${recipeType}/${key}/notes.json`, {
-        notes,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        alert('error');
-      });
-  };
+ 
   return (
     <RecipesContext.Provider
       value={{
@@ -82,7 +69,7 @@ const RecipesProvider = ({ children }) => {
         updateFavoriteRecipe,
         deleteRecipe,
         fetchRecipe,
-        handleAddRecipeNotes,
+  
       }}
     >
       {children}

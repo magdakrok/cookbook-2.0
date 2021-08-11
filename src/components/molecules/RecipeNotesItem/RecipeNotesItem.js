@@ -7,13 +7,13 @@ import { RecipeNotesContext } from 'providers/RecipeNotesProvider/RecipeNotesPro
 const RecipeNotesItem = ({ id, notes }) => {
  
   console.log(id, notes)
-  const {removeRecipeNote} = useContext(RecipeNotesContext)
+  const {handleRemoveRecipeNote} = useContext(RecipeNotesContext)
 
   return (
     <Wrapper>
       <p>{notes}</p>
      <RemoveNoteButton 
-    onClick = {() => removeRecipeNote(id)}
+    onClick = {() => handleRemoveRecipeNote(id)}
     />
       
     </Wrapper>
@@ -21,7 +21,7 @@ const RecipeNotesItem = ({ id, notes }) => {
 };
 
 RecipeNotesItem.propTypes = {
-  id: PropTypes.string,
+  
   notes: PropTypes.object
 };
 

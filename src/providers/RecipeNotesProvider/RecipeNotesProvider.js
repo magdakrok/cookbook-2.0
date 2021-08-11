@@ -8,7 +8,8 @@ export const RecipeNotesContext = createContext({
   setRecipeNotes: () => {},
   setRecipeId: () => {},
   fetchRecipeNotes: () => {},
-  removeRecipeNote: () => {}
+  handleRemoveRecipeNote: () => {},
+  handleAddRecipeNotes: () => {}
 });
 
 const RecipeNotesProvider = ({ children }) => {
@@ -19,7 +20,7 @@ const RecipeNotesProvider = ({ children }) => {
 
   const setRecipeNotes = (notes) => {
     setNotes(notes);
-    console.log(`notatki ${notes}`)
+   
   };
 
   const setRecipeId = (id) => {
@@ -36,17 +37,30 @@ const RecipeNotesProvider = ({ children }) => {
   
   }
 
-  const removeRecipeNote = (key) => {
+  const handleRemoveRecipeNote = (key) => {
     console.log(key)
     console.log(id);
    axios.delete(`${recipeType}/${id}/notes/${key}.json`)
    .then((response) => {
-     fetchRecipeNotes();
+     fetchRecipeNotes()
      console.log(`deleted ${response}`)
    })
    .catch((err ) => console.log(err))
   }
 
+  const handleAddRecipeNotes = (values, key) => {
+    const notes = values;
+    axios
+      .post(`${recipeType}/${key}/notes.json`, {
+        notes,
+      })
+      .then((res) => {
+        fetchRecipeNotes();
+      })
+      .catch((e) => {
+        alert('error');
+      });
+    }
   return (
     <RecipeNotesContext.Provider
       value={{
@@ -55,7 +69,8 @@ const RecipeNotesProvider = ({ children }) => {
         setRecipeNotes,
         setRecipeId,
         fetchRecipeNotes,
-        removeRecipeNote
+        handleRemoveRecipeNote,
+        handleAddRecipeNotes
       }}
     >
       {children}
